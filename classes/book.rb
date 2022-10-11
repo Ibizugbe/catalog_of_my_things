@@ -53,13 +53,15 @@ class Book < Item
   end
 
   def save
-    unless File.exist?('books.json')
-      File.write('books.json', JSON.pretty_generate([{ id: id, publish_date: publish_date, archived: archived, publisher: publisher, cover: cover_state }]))
-    else
+    if File.exist?('books.json')
       books_file = File.read('books.json')
       books = JSON.parse(books_file)
       books << { id: id, publish_date: publish_date, archived: archived, publishers: publisher, cover: cover_state }
       File.write('books.json', JSON.pretty_generate(books))
+    else
+      File.write('books.json',
+                 JSON.pretty_generate([{ id: id, publish_date: publish_date, archived: archived, publisher: publisher,
+                                         cover: cover_state }]))
     end
   end
 
