@@ -3,7 +3,7 @@ require 'date'
 class Item
   attr_reader :id, :publish_date, :archived
 
-  def initialize(id, publish_date , archived = false)
+  def initialize(id, publish_date, archived = false)
     @id = id || rand(1..100)
     @publish_date = publish_date || Time.at(rand * Time.now.to_i).strftime('%Y/%m/%d')
     @archived = archived

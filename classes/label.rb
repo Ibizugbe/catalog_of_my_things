@@ -1,5 +1,4 @@
 class Label
-
   attr_reader :id, :title, :color
 
   def initialize(title, color)
@@ -18,22 +17,22 @@ class Label
   end
 
   def to_s
-    "#{ title }"
+    title.to_s
   end
 
-  def self.add_label(item)
+  def self.add_label(_item)
     puts
     puts 'Label title: '
-    titleInput = gets.chomp
+    title_input = gets.chomp
     puts
     puts 'Label color: '
-    colorInput = gets.chomp
+    color_input = gets.chomp
     puts
 
-    newLabel = Label.new(titleInput, colorInput)
+    new_label = Label.new(title_input, color_input)
     puts 'New label succesfully created'
     puts
-    puts newLabel.to_s
+    puts new_label.to_s
   end
 
   def self.list_labels
@@ -43,5 +42,4 @@ class Label
     end
     puts 'No labels avaliable' if all.empty?
   end
-
 end

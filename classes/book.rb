@@ -15,8 +15,8 @@ class Book < Item
 
   def to_s
     index = Book.all.index(self)
-    "#{index}) ID: #{id}, published in #{publish_date}, by #{@publisher}, cover: #{@cover_state}, archived: #{archived}."
-    
+    "#{index}) ID: #{id}, published in #{publish_date},
+    by #{@publisher}, cover: #{@cover_state}, archived: #{archived}."
   end
 
   def can_be_archived?
@@ -26,18 +26,18 @@ class Book < Item
   def self.add_book
     puts
     puts 'publisher name: '
-    pubInput = gets.chomp
+    pub_input = gets.chomp
     puts
     puts 'publish date(yyyy / mm / dd): '
-    dateInput = gets.chomp
+    date_input = gets.chomp
     puts
     puts 'cover state(good / bad): '
-    coverInput = gets.chomp
+    cover_input = gets.chomp
 
-    newBook = Book.new(nil, Date.parse(dateInput), false, pubInput, coverInput)
+    new_book = Book.new(nil, Date.parse(date_input), false, pub_input, cover_input)
     puts
     puts 'Book added succesfully'
-    puts newBook.to_s
+    puts new_book.to_s
   end
 
   def self.list_books
@@ -47,5 +47,4 @@ class Book < Item
     end
     puts 'No books avaliable' if all.empty?
   end
-
 end
