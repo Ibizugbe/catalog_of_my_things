@@ -13,4 +13,8 @@ class MusicAlbum < Item
     super && @on_spotify
   end
 
+  def to_s
+    "Album name : #{@name} ~ Published on : #{@publish_date} / #{@on_spotify ? 'Available on spotify' : 'Not available on spotify'}"
+  end
+
 end
