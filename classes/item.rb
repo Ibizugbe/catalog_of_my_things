@@ -3,34 +3,34 @@ require 'date'
 class Item
   attr_reader :id, :publish_date, :archived
 
-  def initialize(id, publish_date, archived)
-    @id = id
-    @publish_date = publish_date
+  def initialize(id, publish_date , archived = false)
+    @id = id || rand(1..100)
+    @publish_date = publish_date || Time.at(rand * Time.now.to_i).strftime('%Y/%m/%d')
     @archived = archived
   end
 
   def genre=(genre)
     @genre = genre
-    genre.add_item(self)
+    genre.add_item(self) unless genre.items.include?(self)
   end
 
   def author=(author)
     @author = author
-    author.add_item(self)
+    author.add_item(self) unless author.items.include?(self)
   end
 
   def source=(source)
     @source = source
-    source.add_item(self)
+    source.add_item(self) unless source.items.include?(self)
   end
 
   def label=(label)
-    @label = genre
-    label.add_item(self)
+    @label = label
+    label.add_item(self) unless label.items.include?(self)
   end
 
   def can_be_archived?
-    Date.today.year - publish_date.year > 10
+    @publish_date.year < (Date.today - 10).year
   end
 
   def move_to_archived?
