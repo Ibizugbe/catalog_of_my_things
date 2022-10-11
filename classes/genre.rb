@@ -1,6 +1,6 @@
 require_relative 'items'
 
-class Genre < items
+class Genre 
   attr_reader :id, :items
   attr_accessor :name
 
@@ -8,7 +8,6 @@ class Genre < items
     @id = Random.rand(1..1000)
     @name = name
     @items = []
-    super()
   end
 
   def add_item(item)
