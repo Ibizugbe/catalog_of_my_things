@@ -1,10 +1,13 @@
 require_relative '../modules/prompt'
+require_relative './book'
+require_relative './label'
 
 class App
   include Prompt
 
   def initialize
     puts 'Start cataloging your things'
+    Book.load_books
   end
 
   def app_navigator(option)
@@ -27,10 +30,13 @@ class App
     case option
     when '1'
       Book.list_books
+      app_navigator('1')
     when '2'
       Label.list_labels
+      app_navigator('1')
     when '3'
       Book.add_book
+      app_navigator('1')
     when '4'
       run
     else
@@ -42,10 +48,13 @@ class App
     case option
     when '1'
       MusicAlbum.list_music_albums
+      app_navigator('2')
     when '2'
       Genre.list_genres
+      app_navigator('2')
     when '3'
       MusicAlbum.add_music_album
+      app_navigator('2')
     when '4'
       run
     else
@@ -57,10 +66,13 @@ class App
     case option
     when '1'
       Game.list_games
+      app_navigator('3')
     when '2'
       Author.list_authors
+      app_navigator('3')
     when '3'
       Game.add_game
+      app_navigator('3')
     when '4'
       run
     else
