@@ -1,14 +1,16 @@
 require_relative 'item'
+require_relative 'label'
 require 'json'
 require 'date'
 
 class Book < Item
-  attr_reader :publisher, :cover_state
+  attr_reader :publisher, :cover_state, :label
 
-  def initialize(id, publish_date, archived, publisher, cover_state)
+  def initialize(id, publish_date, archived, publisher, cover_state, label)
     super(id, publish_date, archived)
     @publisher = publisher
     @cover_state = cover_state
+    @label = label
   end
 
   def self.all
@@ -17,7 +19,7 @@ class Book < Item
 
   def to_s
     index = Book.all.index(self)
-    "#{index}) ID: #{id}, published in #{publish_date},
+    "#{index}) id: #{id}, published in #{publish_date},
     by #{@publisher}, cover: #{@cover_state}, archived: #{archived}"
   end
 
@@ -29,14 +31,15 @@ class Book < Item
     puts
     puts 'publisher name: '
     pub_input = gets.chomp
-    puts
     puts 'publish date(yyyy / mm / dd): '
     date_input = gets.chomp
-    puts
     puts 'cover state(good / bad): '
     cover_input = gets.chomp
+    puts
 
-    new_book = Book.new(nil, Date.parse(date_input), false, pub_input, cover_input)
+    puts 'Add a label to this book: '
+    label = Label.add_label
+    new_book = Book.new(nil, Date.parse(date_input), false, pub_input, cover_input, label)
     puts
     puts 'Book added succesfully'
     puts new_book.to_s
@@ -56,12 +59,13 @@ class Book < Item
     if File.exist?('books.json')
       books_file = File.read('books.json')
       books = JSON.parse(books_file)
-      books << { id: id, publish_date: publish_date, archived: archived, publishers: publisher, cover: cover_state }
+      books << { id: id, publish_date: publish_date, archived: archived, publishers: publisher, cover: cover_state,
+                 label_id: label.id }
       File.write('books.json', JSON.pretty_generate(books))
     else
       File.write('books.json',
                  JSON.pretty_generate([{ id: id, publish_date: publish_date, archived: archived, publisher: publisher,
-                                         cover: cover_state }]))
+                                         cover: cover_state, label_id: label.id }]))
     end
   end
 
@@ -71,7 +75,9 @@ class Book < Item
     books_file = File.read('books.json')
     books = JSON.parse(books_file)
     books.each do |book|
-      Book.new(book['id'], Date.parse(book['publish_date']), book['archived'], book['publisher'], book['cover'])
+      label_obj = Label.all.find { |label| label.id.to_i == book['label_id'] }
+      Book.new(book['id'], Date.parse(book['publish_date']), book['archived'], book['publisher'], book['cover'],
+               label_obj)
     end
   end
 end
