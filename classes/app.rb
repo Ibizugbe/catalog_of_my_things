@@ -7,6 +7,7 @@ class App
 
   def initialize
     puts 'Start cataloging your things'
+    Label.load_labels
     Book.load_books
   end
 

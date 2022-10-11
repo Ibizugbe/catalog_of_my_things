@@ -9,6 +9,10 @@ class Item
     @archived = archived
   end
 
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
+
   def genre=(genre)
     @genre = genre
     genre.add_item(self) unless genre.items.include?(self)
@@ -35,5 +39,13 @@ class Item
 
   def move_to_archived?
     @archived = true if can_be_archived?
+  end
+
+  def list_items
+    all.each do |item|
+      puts item.to_s
+    end
+
+    puts 'No items avaliable' if all.empty?
   end
 end
