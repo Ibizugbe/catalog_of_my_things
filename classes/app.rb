@@ -7,6 +7,7 @@ class App
 
   def initialize
     puts 'Start cataloging your things'
+    Book.load_books
   end
 
   def app_navigator(option)

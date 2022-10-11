@@ -20,7 +20,7 @@ class Label
     title.to_s
   end
 
-  def self.add_label(_item)
+  def self.add_label
     puts
     puts 'Label title: '
     title_input = gets.chomp

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 76,
+    "publish_date": "2011-12-12",
+    "archived": false,
+    "publisher": "sid",
+    "cover": "good"
+  },
+  {
+    "id": 84,
+    "publish_date": "2020-04-25",
+    "archived": false,
+    "publishers": "abraham",
+    "cover": "bad"
+  }
+]

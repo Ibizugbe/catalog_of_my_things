@@ -1,7 +1,9 @@
 require_relative 'item'
+require 'json'
+require 'date'
 
 class Book < Item
-  attr_reader :publisher, :cover
+  attr_reader :publisher, :cover_state
 
   def initialize(id, publish_date, archived, publisher, cover_state)
     super(id, publish_date, archived)
@@ -16,7 +18,7 @@ class Book < Item
   def to_s
     index = Book.all.index(self)
     "#{index}) ID: #{id}, published in #{publish_date},
-    by #{@publisher}, cover: #{@cover_state}, archived: #{archived}."
+    by #{@publisher}, cover: #{@cover_state}, archived: #{archived}"
   end
 
   def can_be_archived?
@@ -38,6 +40,8 @@ class Book < Item
     puts
     puts 'Book added succesfully'
     puts new_book.to_s
+
+    new_book.save
   end
 
   def self.list_books
@@ -46,5 +50,26 @@ class Book < Item
       puts book.to_s
     end
     puts 'No books avaliable' if all.empty?
+  end
+
+  def save
+    unless File.exist?('books.json')
+      File.write('books.json', JSON.pretty_generate([{ id: id, publish_date: publish_date, archived: archived, publisher: publisher, cover: cover_state }]))
+    else
+      books_file = File.read('books.json')
+      books = JSON.parse(books_file)
+      books << { id: id, publish_date: publish_date, archived: archived, publishers: publisher, cover: cover_state }
+      File.write('books.json', JSON.pretty_generate(books))
+    end
+  end
+
+  def self.load_books
+    return unless File.exist?('books.json')
+
+    books_file = File.read('books.json')
+    books = JSON.parse(books_file)
+    books.each do |book|
+      Book.new(book['id'], Date.parse(book['publish_date']), book['archived'], book['publisher'], book['cover'])
+    end
   end
 end
