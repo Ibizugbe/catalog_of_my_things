@@ -1,7 +1,7 @@
 require 'date'
 require_relative './author'
 
-class Item  
+class Item
   attr_reader :id, :publish_date, :archived, :author
 
   def initialize(id, publish_date, archived = false)
@@ -17,7 +17,7 @@ class Item
   def genre=(genre)
     @genre = genre
     genre.add_item(self) unless genre.items.include?(self)
-  end 
+  end
 
   def author=(author)
     @author = author
