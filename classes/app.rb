@@ -1,6 +1,8 @@
 require_relative '../modules/prompt'
 require_relative './book'
 require_relative './label'
+require_relative './author'
+require_relative './game'
 
 class App
   include Prompt
@@ -9,6 +11,8 @@ class App
     puts 'Start cataloging your things'
     Label.load_labels
     Book.load_books
+    @games = []
+    @authors = []    
   end
 
   def app_navigator(option)
@@ -66,13 +70,29 @@ class App
   def games_navigator(option)
     case option
     when '1'
-      Game.list_games
+       @games.each do |game|
+        puts "Date: #{game.date}, #{game.multiplayer}, #{game.last_played_at}"
+       end     
       app_navigator('3')
-    when '2'
-      Author.list_authors
+
+    when '2'      
+      @authors.each do |author|
+        puts "FirstName: #{author.first_name}, LastName: #{author.last_name}, ID: #{author.id}"
+      end      
       app_navigator('3')
+
     when '3'
-      Game.add_game
+      print('First Name of the author of the game: ')      
+      first_name = gets.chomp
+      print ('Last Name of the author of the game: ')
+      last_name = gets.chomp      
+      print ('Type yes if multiplayer or No if otherwise: ')
+      multiplayer = gets.chomp
+      print ('Date played: ')
+      last_played_at = gets.chomp
+      @authors << Author.new(first_name, last_name)
+      @games << Game.new(multiplayer, last_played_at)
+      puts('Author and Game created successfully')         
       app_navigator('3')
     when '4'
       run
