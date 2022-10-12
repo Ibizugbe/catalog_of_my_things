@@ -1,24 +1,18 @@
 
 
 class Author
-  def initialize(id, first_name, last_name)
-    super(id)
+  attr_accessor :first_name, :last_name, :items
+  attr_reader :id
+
+  def initialize(first_name, last_name)
     @first_name = first_name
-    @last_name = last_name    
-  end
-end
-
-class Owner
-  attr_accessor :name
-  attr_reader :animals
-
-  def initialize(name)
-    @name = name
-    @animals = []
+    @last_name = last_name 
+    @items = []
+    @id = rand(1..1000)  
   end
 
-  # Instead of setter for entire collection a method to add animals one by one
-  def add_animal(animal)
-    @animals.push(animal)
+  def add_item(item)
+    @items << item
+    item.author = self
   end
 end

@@ -1,9 +1,8 @@
 require 'date'
 require_relative './author'
 
-class Item
-  attr_accessor :Author
-  attr_reader :id, :publish_date, :archived
+class Item  
+  attr_reader :id, :publish_date, :archived, :author
 
   def initialize(id, publish_date, archived = false)
     @id = id || rand(1..100)
@@ -18,11 +17,11 @@ class Item
   def genre=(genre)
     @genre = genre
     genre.add_item(self) unless genre.items.include?(self)
-  end
+  end 
 
   def author=(author)
     @author = author
-    author.add_item(self) unless author.items.include?(self)
+    author.items.push(self) unless author.items.include?(self)
   end
 
   def source=(source)
