@@ -1,6 +1,9 @@
 require_relative '../modules/prompt'
 require_relative './book'
 require_relative './label'
+require_relative 'album_lib'
+require_relative 'genre'
+require_relative 'music'
 
 class App
   include Prompt
@@ -8,6 +11,8 @@ class App
   def initialize
     puts 'Start cataloging your things'
     Book.load_books
+    AlbumTracker.load_genres
+    AlbumTracker.load_albums
   end
 
   def app_navigator(option)
@@ -47,13 +52,13 @@ class App
   def music_albums_navigator(option)
     case option
     when '1'
-      MusicAlbum.list_music_albums
+      AlbumLibrary.list_music_albums
       app_navigator('2')
     when '2'
-      Genre.list_genres
+      AlbumLibrary.list_genres
       app_navigator('2')
     when '3'
-      MusicAlbum.add_music_album
+      AlbumLibrary.add_music_album
       app_navigator('2')
     when '4'
       run

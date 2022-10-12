@@ -1,12 +1,20 @@
 require_relative 'item'
 require_relative 'genre'
+require_relative '../modules/album_tracker'
+
 
 class MusicAlbum < Item
+  include AlbumTracker
   attr_accessor :name, :on_spotify, :publish_date, :genre
-  def initialize(name, publish_date, on_spotify = false)
+  def initialize(name, publish_date, id, archived, genre, on_spotify = false)
     @name = name
     @on_spotify = on_spotify
-    super(publish_date)
+    @genre = genre
+    super(id, publish_date, archived)
+  end
+
+  def self.all
+    ObjectSpace.each_object(self).to_a
   end
 
   def can_be_archived?
