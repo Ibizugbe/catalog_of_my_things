@@ -78,7 +78,7 @@ class App
 
     when '2'
       @authors.each do |author|
-        puts "FirstName: #{author.first_name}, \n LastName: #{author.last_name}"
+        puts "#{author.first_name} #{author.last_name}"
       end
       app_navigator('3')
 
