@@ -12,7 +12,7 @@ class App
     Label.load_labels
     Book.load_books
     @games = []
-    @authors = []    
+    @authors = []
   end
 
   def app_navigator(option)
@@ -70,36 +70,37 @@ class App
   def games_navigator(option)
     case option
     when '1'
-       @games.each do |game|
-        puts "Date: #{game.id}, \n multiplayer: #{game.multiplayer}, \n last_played_at: #{game.last_played_at}, \n publish_date: #{game.publish_date}, \n archived: #{game.archived}"
-       end     
+      @games.each do |game|
+        puts "Date: #{game.id}, \n multiplayer: #{game.multiplayer}"
+        puts "last_played_at: #{game.last_played_at}, \n publish_date: #{game.publish_date}, \n archived: #{game.archived}"
+      end
       app_navigator('3')
 
-    when '2'      
+    when '2'
       @authors.each do |author|
         puts "FirstName: #{author.first_name}, \n LastName: #{author.last_name}, \n ID: #{author.id}"
-      end      
+      end
       app_navigator('3')
 
     when '3'
-      print('First Name of the author of the game: ')      
+      print('First Name of the author of the game: ')
       first_name = gets.chomp
-      print ('Last Name of the author of the game: ')
-      last_name = gets.chomp       
+      print('Last Name of the author of the game: ')
+      last_name = gets.chomp
       @authors << Author.new(first_name, last_name)
-           
-      print ('Type yes if multiplayer or No if otherwise: ')
+
+      print('Type yes if multiplayer or No if otherwise: ')
       multiplayer = gets.chomp
-      print ('Date played: ')
+      print('Date played: ')
       last_played_at = gets.chomp
-      print ('Game ID: ')
+      print('Game ID: ')
       id = gets.chomp.to_i
-      print ('Date game was published: ')
-      publish_date = gets.chomp.to_i 
-      print ('Do you want this game to be archived Yes|No: ') 
-      archived = gets.chomp.to_i         
+      print('Date game was published: ')
+      publish_date = gets.chomp.to_i
+      print('Do you want this game to be archived Yes|No: ')
+      archived = gets.chomp.to_i
       @games << Game.new(multiplayer, last_played_at, id, publish_date, archived)
-      puts('Author and Game created successfully')         
+      puts('Author and Game created successfully')
       app_navigator('3')
     when '4'
       run
