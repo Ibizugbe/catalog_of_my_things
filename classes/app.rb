@@ -71,13 +71,13 @@ class App
     case option
     when '1'
        @games.each do |game|
-        puts "Date: #{game.date}, #{game.multiplayer}, #{game.last_played_at}"
+        puts "Date: #{game.id}, \n multiplayer: #{game.multiplayer}, \n last_played_at: #{game.last_played_at}, \n publish_date: #{game.publish_date}, \n archived: #{game.archived}"
        end     
       app_navigator('3')
 
     when '2'      
       @authors.each do |author|
-        puts "FirstName: #{author.first_name}, LastName: #{author.last_name}, ID: #{author.id}"
+        puts "FirstName: #{author.first_name}, \n LastName: #{author.last_name}, \n ID: #{author.id}"
       end      
       app_navigator('3')
 
@@ -85,13 +85,20 @@ class App
       print('First Name of the author of the game: ')      
       first_name = gets.chomp
       print ('Last Name of the author of the game: ')
-      last_name = gets.chomp      
+      last_name = gets.chomp       
+      @authors << Author.new(first_name, last_name)
+           
       print ('Type yes if multiplayer or No if otherwise: ')
       multiplayer = gets.chomp
       print ('Date played: ')
       last_played_at = gets.chomp
-      @authors << Author.new(first_name, last_name)
-      @games << Game.new(multiplayer, last_played_at)
+      print ('Game ID: ')
+      id = gets.chomp.to_i
+      print ('Date game was published: ')
+      publish_date = gets.chomp.to_i 
+      print ('Do you want this game to be archived Yes|No: ') 
+      archived = gets.chomp.to_i         
+      @games << Game.new(multiplayer, last_played_at, id, publish_date, archived)
       puts('Author and Game created successfully')         
       app_navigator('3')
     when '4'
