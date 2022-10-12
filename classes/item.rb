@@ -1,6 +1,8 @@
 require 'date'
+require_relative './author'
 
 class Item
+  attr_accessor :Author
   attr_reader :id, :publish_date, :archived
 
   def initialize(id, publish_date, archived = false)
