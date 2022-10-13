@@ -1,6 +1,8 @@
 require_relative '../modules/prompt'
 require_relative './book'
 require_relative './label'
+require_relative './author'
+require_relative './game'
 require_relative 'album_lib'
 require_relative 'genre'
 require_relative 'music'
@@ -12,6 +14,8 @@ class App
     puts 'Start cataloging your things'
     Label.load_labels
     Book.load_books
+    @games = []
+    @authors = []
     AlbumTracker.load_genres
     AlbumTracker.load_albums
   end
@@ -71,13 +75,37 @@ class App
   def games_navigator(option)
     case option
     when '1'
-      Game.list_games
+      @games.each do |game|
+        puts "Date: #{game.id}, \n multiplayer: #{game.multiplayer}"
+        puts "last_played_at: #{game.last_played_at}, \n publish_date: #{game.publish_date}, \n archived: #{game.archived}"
+      end
       app_navigator('3')
+
     when '2'
-      Author.list_authors
+      @authors.each do |author|
+        puts "FirstName: #{author.first_name}, \n LastName: #{author.last_name}"
+      end
       app_navigator('3')
+
     when '3'
-      Game.add_game
+      print('First Name of the author of the game: ')
+      first_name = gets.chomp
+      print('Last Name of the author of the game: ')
+      last_name = gets.chomp
+      @authors << Author.new(first_name, last_name)
+
+      print('Type yes if multiplayer or No if otherwise: ')
+      multiplayer = gets.chomp
+      print('Date played: ')
+      last_played_at = gets.chomp
+      print('Game ID: ')
+      id = gets.chomp.to_i
+      print('Date game was published: ')
+      publish_date = gets.chomp.to_i
+      print('Do you want this game to be archived Yes|No: ')
+      archived = gets.chomp.to_i
+      @games << Game.new(multiplayer, last_played_at, id, publish_date, archived)
+      puts('Author and Game created successfully')
       app_navigator('3')
     when '4'
       run
