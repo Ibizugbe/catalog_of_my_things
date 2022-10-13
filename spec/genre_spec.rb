@@ -14,9 +14,4 @@ describe Genre do
   it 'has items' do
     expect(@genre.items).to eq([])
   end
-
-  it 'can add items' do
-    @genre.add_item(Items.new('Jazz'))
-    expect(@genre.items.length).to eq(1)
-  end
 end
