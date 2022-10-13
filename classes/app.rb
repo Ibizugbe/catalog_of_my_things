@@ -11,10 +11,10 @@ class App
 
   def initialize
     puts 'Start cataloging your things'
-    LabelStore.load_labels
-    BookStore.load_books
     AlbumTracker.load_genres
     AlbumTracker.load_albums
+    LabelStore.load_labels
+    BookStore.load_books
   end
 
   def app_navigator(option)
