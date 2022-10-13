@@ -24,3 +24,9 @@ CREATE TABLE music_albums(
   author_ID INT REFERENCES author(ID),
   genre_ID INT REFERENCES genre(ID)
 );
+
+-- create table for genres
+CREATE TABLE genre(
+  ID SERIAL PRIMARY KEY,
+  name VARCHAR(50)
+);
