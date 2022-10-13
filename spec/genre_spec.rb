@@ -1,10 +1,10 @@
 require_relative '../classes/item'
-require_relative '../music/genre'
-require_relative '../album_lib.rb'
+require_relative '../classes/genre'
+require_relative '../classes/album_lib'
 
 describe Genre do
   before :each do
-    @genre = Genre.new('Pop')
+    @genre = Genre.new('1', 'Pop')
   end
 
   it 'contain a name' do
