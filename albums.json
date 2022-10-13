@@ -1,0 +1,18 @@
+[
+  {
+    "id": 53,
+    "name": "Justin john",
+    "publish_date": "2001/03/04",
+    "on_spotify": false,
+    "archived": false,
+    "genre_id": 566
+  },
+  {
+    "id": 16,
+    "name": "Fiction",
+    "publish_date": "2003/12/23",
+    "on_spotify": true,
+    "archived": false,
+    "genre_id": 440
+  }
+]
