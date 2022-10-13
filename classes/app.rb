@@ -7,7 +7,6 @@ require_relative 'album_lib'
 require_relative 'genre'
 require_relative 'music'
 
-
 class App
   include Prompt
 
