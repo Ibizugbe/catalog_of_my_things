@@ -15,7 +15,7 @@ class App
     Label.load_labels
     Book.load_books
     LabelStore.load_labels
-    BookStore.load_books   
+    BookStore.load_books
     AlbumTracker.load_genres
     AlbumTracker.load_albums
   end
