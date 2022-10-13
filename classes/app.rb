@@ -1,4 +1,5 @@
 require_relative '../modules/prompt'
+require_relative '../modules/book_store'
 require_relative './book'
 require_relative './label'
 require_relative 'album_lib'
@@ -10,8 +11,8 @@ class App
 
   def initialize
     puts 'Start cataloging your things'
-    Label.load_labels
-    Book.load_books
+    LabelStore.load_labels
+    BookStore.load_books
     AlbumTracker.load_genres
     AlbumTracker.load_albums
   end
@@ -35,13 +36,13 @@ class App
   def books_navigator(option)
     case option
     when '1'
-      Book.list_books
+      BookStore.list_books
       app_navigator('1')
     when '2'
-      Label.list_labels
+      LabelStore.list_labels
       app_navigator('1')
     when '3'
-      Book.add_book
+      BookStore.add_book
       app_navigator('1')
     when '4'
       run

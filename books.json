@@ -1,18 +1,18 @@
 [
   {
-    "id": 6,
-    "publish_date": "2011-12-23",
+    "id": 63,
+    "publish_date": "1997-07-26",
     "archived": false,
-    "publisher": "sid",
+    "publisher": "Scholastic",
     "cover": "good",
-    "label_id": 409
+    "label_id": 270
   },
   {
-    "id": 75,
-    "publish_date": "2020-03-12",
+    "id": 88,
+    "publish_date": "1979-09-01",
     "archived": false,
-    "publishers": "abraham",
+    "publisher": "Azadajad",
     "cover": "good",
-    "label_id": 612
+    "label_id": 285
   }
 ]
