@@ -1,12 +1,12 @@
 require_relative 'music'
 require_relative '../modules/album_tracker'
 
-class Genre 
+class Genre
   include AlbumTracker
   attr_reader :id, :items
   attr_accessor :name
 
-  def initialize(id, name)
+  def initialize(_id, name)
     @id = Random.rand(1..1000)
     @name = name
     @items = []

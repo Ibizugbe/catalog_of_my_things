@@ -24,7 +24,6 @@ class AlbumLibrary
     end
   end
 
-
   # create a music album
   def self.add_music_album
     print 'Album Name : '
@@ -58,7 +57,7 @@ class AlbumLibrary
     end
     puts
     Genre.all.each do |genre|
-      puts genre.to_s 
+      puts genre.to_s
       puts
     end
   end
