@@ -5,10 +5,11 @@ require_relative './label'
 require_relative 'album_lib'
 require_relative 'genre'
 require_relative 'music'
-require_relative '../modules/author_lib'
+require_relative '../modules/game_option'
 
 class App
   include Prompt
+  include Gameoptions
 
   def initialize
     puts 'Start cataloging your things'
@@ -16,6 +17,7 @@ class App
     BookStore.load_books
     AlbumTracker.load_genres
     AlbumTracker.load_albums
+    load_author
   end
 
   def app_navigator(option)
@@ -73,16 +75,13 @@ class App
   def games_navigator(option)
     case option
     when '1'
-      game = AuthorGameLibrary.new
-      game.list_games
+      list_games
       app_navigator('3')
     when '2'
-      author = AuthorGameLibrary.new
-      author.list_authors
+      list_authors
       app_navigator('3')
     when '3'
-      new_game = AuthorGameLibrary.new
-      new_game.add_game
+      create_game
       app_navigator('3')
     when '4'
       run
