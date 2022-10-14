@@ -10,10 +10,6 @@ describe Author do
       expect(author).to be_an_instance_of(Author)
     end
 
-    it 'should have a name' do
-      expect(author.first_name).to eq('John')
-    end
-
     it 'should have a last name' do
       expect(author.last_name).to eq('Doe')
     end
@@ -46,14 +42,6 @@ describe Author do
   end
 
   describe '#Game class' do
-    it 'should have a name' do
-      expect(game.multiplayer).to eq('multiplayer')
-    end
-
-    it 'should have a last played at' do
-      expect(game.last_played_at).to eq('2019-12-12')
-    end
-
     it 'be instance of' do
       expect(game).to be_instance_of(Game)
     end

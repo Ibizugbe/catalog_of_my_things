@@ -36,6 +36,7 @@ module Gameoptions
     put_lable('Existing authors')
     list_authors
     id = take_input_label('Enter the id of the author')
+    puts('Created successfully')
     id = id.to_i
     @authors.find { |author| author.id == id }
   end
@@ -44,6 +45,7 @@ module Gameoptions
     author_first_name = take_input_label('Enter the author first_name')
     author_last_name = take_input_label('Enter the author last name')
     create_author(author_first_name, author_last_name)
+    puts('Created successfully')
   end
 
   def create_author(author_first_name, author_last_name)
