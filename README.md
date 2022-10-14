@@ -1,32 +1,24 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Catalog of things
 
-> Description the project.
-
+> This is a console application that is built with ruby. It is used to manage items of an individual in a catalog. It has functionalities that include adding a book, music and game, with different properties attached to these items.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
+- RSpec
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
+
+- run `git clone https://github.com/Ibizugbe/catalog_of_my_things` to have a copy of this project saved to your local computer
 
 ### Prerequisites
 
-### Setup
+- you must have ruby installed in your local computer.
+- you must have a working terminal.
 
 ### Install
 
@@ -34,23 +26,27 @@ To get a local copy up and running follow these simple example steps.
 
 ### Run tests
 
-### Deployment
-
-
+run `rspec spec` to successfully run the already written tests.
 
 ## Authors
 
-👤 **Author1**
+👤 **Ibizugbe Abraham**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [ibizugbe](https://github.com/ibizugbe)
+- Twitter: [abrahamibizugbe](https://twitter.com/abrahamibizugbe)
+- LinkedIn: [Abraham Ibizugbe](https://linkedin.com/in/abrahamibizugbe)
 
-👤 **Author2**
+👤 **Sidney**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [XsidX](https://github.com/XsidX)
+- Twitter: [@\_sid_o](https://twitter.com/_sid_o_)
+- LinkedIn: [Sidney Kaguli](https://www.linkedin.com/in/sidney-kaguli)
+
+👤 **Ezea Stephen Nnabuike**
+
+- GitHub: [@stephnna](https://github.com/stephnna)
+- Twitter: [@stephnna](https://twitter.com/stephnna)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/stephen-ezea/)
 
 ## 🤝 Contributing
 
