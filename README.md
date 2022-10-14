@@ -36,11 +36,11 @@ run `rspec spec` to successfully run the already written tests.
 - Twitter: [abrahamibizugbe](https://twitter.com/abrahamibizugbe)
 - LinkedIn: [Abraham Ibizugbe](https://linkedin.com/in/abrahamibizugbe)
 
-👤 **Author2**
+👤 **Sidney**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [XsidX](https://github.com/XsidX)
+- Twitter: [@\_sid_o](https://twitter.com/_sid_o_)
+- LinkedIn: [Sidney Kaguli](https://www.linkedin.com/in/sidney-kaguli)
 
 👤 **Author3**
 
