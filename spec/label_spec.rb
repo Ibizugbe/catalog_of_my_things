@@ -21,8 +21,8 @@ describe Label do
       expect(LabelStore.all).to be_instance_of(Array)
     end
 
-    it 'returns an array with 5 labels' do
-      expect(LabelStore.all.length).to eq(5)
+    it 'returns an array with 3 labels' do
+      expect(LabelStore.all.length).to eq(3)
     end
 
     it 'returns an array of only Label instances' do
@@ -33,7 +33,7 @@ describe Label do
   context ' #add label' do
     it 'adds a label' do
       Label.new(0o04, 'not trust me', 'red')
-      expect(LabelStore.all.length).to eq(6)
+      expect(LabelStore.all.length).to eq(4)
     end
   end
 end
