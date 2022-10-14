@@ -1,5 +1,5 @@
 require_relative '../classes/music'
-require_relative '../classes/album_lib.rb'
+require_relative '../classes/album_lib'
 
 describe MusicAlbum do
   before :each do
