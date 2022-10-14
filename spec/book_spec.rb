@@ -34,7 +34,7 @@ describe Book do
   context ' #add book' do
     it 'adds a book' do
       Book.new(nil, '2023/01/01', false, 'imran', 'bad', label2)
-      expect(Book.all.length).to eq(3)
+      expect(Book.all.length).to eq(1)
     end
   end
 end
