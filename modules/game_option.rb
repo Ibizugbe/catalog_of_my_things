@@ -9,7 +9,7 @@ module Gameoptions
     name = take_input_label('Enter the name of the game')
     last_played_at = take_input_label('Enter the date of the last played')
     publish_date = take_input_label('Enter the publish date of the game')
-    game(publish_date, name, last_played_at)
+    game(publish_date, name, last_played_at)    
   end
 
   def game(publish_date, name, last_played_at)
@@ -36,6 +36,7 @@ module Gameoptions
     put_lable('Existing authors')
     list_authors
     id = take_input_label('Enter the id of the author')
+    puts("Created successfully")
     id = id.to_i
     @authors.find { |author| author.id == id }
   end
@@ -44,6 +45,7 @@ module Gameoptions
     author_first_name = take_input_label('Enter the author first_name')
     author_last_name = take_input_label('Enter the author last name')
     create_author(author_first_name, author_last_name)
+    puts("Created successfully")
   end
 
   def create_author(author_first_name, author_last_name)
