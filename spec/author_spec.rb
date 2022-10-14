@@ -8,7 +8,7 @@ describe Author do
   describe '#author class' do
     it 'should be an instance of Author' do
       expect(author).to be_an_instance_of(Author)
-    end    
+    end
 
     it 'should have a last name' do
       expect(author.last_name).to eq('Doe')
@@ -41,8 +41,7 @@ describe Author do
     end
   end
 
-  describe '#Game class' do    
-
+  describe '#Game class' do
     it 'be instance of' do
       expect(game).to be_instance_of(Game)
     end
