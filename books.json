@@ -14,5 +14,13 @@
     "publisher": "Azadajad",
     "cover": "good",
     "label_id": 285
+  },
+  {
+    "id": 28,
+    "publish_date": "2022-02-20",
+    "archived": false,
+    "publisher": "John Smith",
+    "cover": "good",
+    "label_id": 674
   }
 ]
