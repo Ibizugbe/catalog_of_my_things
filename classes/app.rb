@@ -12,8 +12,6 @@ class App
 
   def initialize
     puts 'Start cataloging your things'
-    Label.load_labels
-    Book.load_books
     LabelStore.load_labels
     BookStore.load_books
     AlbumTracker.load_genres
