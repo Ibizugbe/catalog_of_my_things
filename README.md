@@ -42,11 +42,11 @@ run `rspec spec` to successfully run the already written tests.
 - Twitter: [@\_sid_o](https://twitter.com/_sid_o_)
 - LinkedIn: [Sidney Kaguli](https://www.linkedin.com/in/sidney-kaguli)
 
-👤 **Author3**
+👤 **Ezea Stephen Nnabuike**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@stephnna](https://github.com/stephnna)
+- Twitter: [@stephnna](https://twitter.com/stephnna)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/stephen-ezea/)
 
 ## 🤝 Contributing
 
