@@ -20,6 +20,7 @@ CREATE TABLE music_albums(
   publish_date DATE NOT NULL,
   on_spotify BOOLEAN NOT NULL,
   archived BOOLEAN NOT NULL,
+
   genre_ID INT REFERENCES genre(ID)
 );
 
