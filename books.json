@@ -1,0 +1,26 @@
+[
+  {
+    "id": 63,
+    "publish_date": "1997-07-26",
+    "archived": false,
+    "publisher": "Scholastic",
+    "cover": "good",
+    "label_id": 270
+  },
+  {
+    "id": 88,
+    "publish_date": "1979-09-01",
+    "archived": false,
+    "publisher": "Azadajad",
+    "cover": "good",
+    "label_id": 285
+  },
+  {
+    "id": 28,
+    "publish_date": "2022-02-20",
+    "archived": false,
+    "publisher": "John Smith",
+    "cover": "good",
+    "label_id": 674
+  }
+]
